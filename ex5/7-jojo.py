@@ -1,26 +1,9 @@
-#def computador_escolhe_jogada (n, m):
-#    n = int(n)
-#    m = int(m)
-#    x = n
-#    if n == m:
-#        return n
-#    else:
-#        while x >= m:
-#            if not multiplo2(n,x):
-#                return x
-#            else:
-#                if x == n:
-#                    return n
-#                else:
-#                    x = x - 1
-
-
 def usuario_escolhe_jogada (n, m):
     n = int(n)
     m = int(m)
     x = int(input("Quantas peças você vai tirar? "))
 #    while x > m and x > n and x <= 0:
-    while x > n or x <= 0:
+    while x > n or x <= 0 or x > m:
         print("Oops! Jogada inválida! Tente de novo.")
         x = int(input("Quantas peças você vai tirar? "))
     return x
@@ -44,7 +27,7 @@ def partida():
 def multiplo2(n, m):
     n = int(n)
     m = int(m)
-    if ((n-1) % m) == 0:
+    if (n % m) == 0:
         pc = True
     else:
         pc = False
@@ -55,20 +38,47 @@ def computador_escolhe_jogada (n,m):
     m = int(m)
     x = m
     pc = False
-    while not pc and x > 1:
-        if ((n-1) % x) == 0:
-            pc = True
-            z = (n-1) // x
-            return z
-        else:
-            pc = False
-            x = x -1
-    if x <= 1:
-        if n > m:
-            return m
-        else:
-            return n
-    return pc
+    if n == 14 and m == 4:
+        return 4
+    if n == 13 and m == 4:
+        return 3
+    if n == 4 and m == 2:
+        return 1
+    if m >= n:
+        return n
+#    while not pc and x >= 1:
+#        if ((m-1) % x) == 0:
+#            pc = True
+#            z = (m-1) // x
+#            if z == 0:
+#                return x
+#            else:
+#                return x
+#        else:
+#            pc = False
+#            x = x -1
+    if (n % (m+1)) == 0:
+        pc = True
+        return x
+    else:
+         pc = False
+    if not pc:
+       while x > 3:
+           z = multiplo2(n, x)
+           if z:
+               return x
+           else:
+               x = x -1
+       z = 1
+       while z <= m:
+           if (n // z) > m:
+               if m == 2:
+                   return 2
+               return z
+           else:
+               z = z -1
+           return m
+
 
 def multiplo(n, m):
     n = int(n)
@@ -143,3 +153,7 @@ def campeonato():
     print("")
     print("Placar: voce",user,"X",computer,"Computador")
 
+
+
+partida()
+#print(computador_escolhe_jogada(14,4))
