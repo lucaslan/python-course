@@ -7,9 +7,10 @@ while num > 0:
 xd = []
 #print("tamanho:",len(num_array))
 maximo = len(num_array) - 1
+print()
 for x in range(maximo,-1,-1):
 #    print("x=",x,"maximo=",maximo)
-#    print(num_array[x])
-    xd.append(int(num_array[x]))
+    print(num_array[x])
+#    xd.append(int(num_array[x]))
 
-print(xd)
+#print(xd)

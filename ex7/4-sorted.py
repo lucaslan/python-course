@@ -1,4 +1,4 @@
-list = [1,2,3,4,4,3,2,1,2,3,4]
+list = [1,2,3]
 
 def remove_repetidos(lista):
     MOD=sorted(lista[:])
@@ -6,13 +6,13 @@ def remove_repetidos(lista):
     FINAL=[]
 #    print("list=",MOD)
 #    print("MOD=",len(MOD))
-    for X in range(0,(MAX-1)):
+    for X in range(0,MAX):
         N1=MOD[X]
         if not N1 in FINAL:
             FINAL.append(int(N1))
     return FINAL
 #print(sorted(list))
-print(remove_repetidos(list))
+#print(remove_repetidos(list))
 
 #        N1=MOD[X]
 #        if X == len(MOD):
