@@ -20,7 +20,7 @@ while y <= altura:
         if x == 1 or largura == x:
             print("#",end="")
         else:
-            print(end=" ")
+            print(end="")
         x = x + 1
 
     print("")
