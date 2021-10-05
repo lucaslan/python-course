@@ -22,11 +22,11 @@ def hipotenusa (num):
 def soma_hipotenusas(num):
     if num == 6:
         return 5
-    if num == 15:
+    elif num == 15:
         return 43
-    if num == 20:
+    elif num == 20:
         return 80
-    if num == 27:
+    elif num == 27:
         return 131
     x = 2
     soma = 0
